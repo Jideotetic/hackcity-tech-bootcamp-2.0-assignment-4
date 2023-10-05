@@ -1,6 +1,7 @@
 const result = document.getElementById("get-result");
 const temperature = document.getElementById("convert-temperature");
 const access = document.getElementById("check-access");
+const evenOdd = document.getElementById("even-odd");
 
 function getResult(score) {
   score = prompt("Enter your score");
