@@ -55,3 +55,13 @@ function checkAccess(role) {
 }
 
 access.addEventListener("click", checkAccess);
+
+function checkEvenOdd(num) {
+  num = prompt("Enter number");
+  while (num === null || num === "" || isNaN(+num)) {
+    num = prompt("Enter a valid number");
+  }
+  return num % 2 === 0 ? alert("Even") : alert("Odd");
+}
+
+evenOdd.addEventListener("click", checkEvenOdd);
