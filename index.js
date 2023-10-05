@@ -2,6 +2,10 @@ const result = document.getElementById("get-result");
 const temperature = document.getElementById("convert-temperature");
 const access = document.getElementById("check-access");
 const evenOdd = document.getElementById("even-odd");
+const bookList = document.getElementById("list-book");
+const libraryDisplay = document.getElementById("library");
+const bookAdd = document.getElementById("add-book");
+const bookRemove = document.getElementById("remove-book");
 
 function getResult(score) {
   score = prompt("Enter your score");
@@ -66,10 +70,60 @@ function checkEvenOdd(num) {
 
 evenOdd.addEventListener("click", checkEvenOdd);
 
-const book = {
-  title: "JavaScript Info",
-  author: "llya Kantor",
-  isRead: false,
-};
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
+  this.isRead = false;
+}
 
 const library = [];
+
+function listBooks() {
+  libraryDisplay.textContent = JSON.stringify(library);
+}
+
+bookList.addEventListener("click", listBooks);
+
+function addBook(title, author) {
+  title = prompt("Enter book title");
+  while (title === null || title === "") {
+    title = prompt("Enter a valid role title");
+  }
+  author = prompt("Enter book author");
+  while (author === null || author === "") {
+    author = prompt("Enter a valid role author");
+  }
+  title = title.toLowerCase().split("");
+  let titleFirstLetter = title.splice(0, 1).join("").toUpperCase();
+  title = title.join("");
+  title = titleFirstLetter.concat(title);
+  author = author.toLowerCase().split("");
+  let authorFirstLetter = author.splice(0, 1).join("").toUpperCase();
+  author = author.join("");
+  author = authorFirstLetter.concat(author);
+  const book = new Book(title, author);
+  library.push(book);
+  listBooks();
+}
+
+bookAdd.addEventListener("click", addBook);
+
+// function removeBook(title) {
+//   title = prompt("Enter book title");
+//   title = title.toLowerCase().split("");
+//   let titleFirstLetter = title.splice(0, 1).join("").toUpperCase();
+//   title = title.join("");
+//   title = titleFirstLetter.concat(title);
+//   for (let index = 0; index < library.length; index++) {
+//     library[index].title === title
+//       ? library.splice(index, 1)
+//       : alert("No such book");
+//   }
+//   libraryDisplay.textContent = JSON.stringify(library);
+// }
+
+// bookRemove.addEventListener("click", removeBook);
+
+// function markAsRead(title) {
+//   return;
+// }
