@@ -65,3 +65,11 @@ function checkEvenOdd(num) {
 }
 
 evenOdd.addEventListener("click", checkEvenOdd);
+
+const book = {
+  title: "JavaScript Info",
+  author: "llya Kantor",
+  isRead: false,
+};
+
+const library = [];
