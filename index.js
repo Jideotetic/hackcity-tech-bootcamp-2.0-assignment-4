@@ -6,6 +6,7 @@ const bookMenu = document.getElementById("book-menu");
 
 function getResult(score) {
   score = prompt("Enter your score");
+  score = score.trim();
   while (score === "" || isNaN(+score)) {
     score = prompt("Enter a valid score");
     score = score.trim();
