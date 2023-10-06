@@ -39,6 +39,7 @@ function convertTemperature(temperature) {
     temperature = prompt(
       "Enter a valid temperature with unit....Hint(10C or 10F)"
     );
+    temperature = temperature.trim();
     if (temperature === null) {
       return;
     }
@@ -60,6 +61,7 @@ function checkAccess(role) {
   role = prompt("Enter your role (admin | user)");
   while (role === "") {
     role = prompt("Enter a valid role (admin | user)");
+    role = role.trim();
   }
 
   if (role === null) {
@@ -79,6 +81,7 @@ function checkEvenOdd(num) {
   num = prompt("Enter number");
   while (num === "" || isNaN(+num)) {
     num = prompt("Enter a valid number");
+    num = num.trim();
   }
 
   if (num === null) {
@@ -122,11 +125,6 @@ function removeBook(title) {
   } else {
     alert("No such book");
   }
-  //for (let index = 0; index < library.length; index++) {
-   // library[index].title === title
-   //   ? library.splice(index, 1)
-    //  : alert("No such book");
-//  }
 }
 
 function listBooks() {
@@ -145,11 +143,6 @@ function markAsRead(title) {
   } else {
     alert("No such book");
   }
-  // for (let index = 0; index < library.length; index++) {
-  //   library[index].title === title
-  //     ? (library[index].isRead = true)
-  //     : alert("No such book");
-  // }
 }
 
 function showBookMenu(option) {
@@ -165,6 +158,7 @@ function showBookMenu(option) {
     option = prompt(
       "Welcome to the Library Management System!\n\nEnter a valid option\n\n1. Add a book\n2. Remove a book\n3. List all books\n4. Mark a book as read\n5. Exit"
     );
+    option = option.trim();
     if (option === null) {
       return;
     }
@@ -175,6 +169,7 @@ function showBookMenu(option) {
       let title = prompt("Enter book title");
       while (title === "") {
         title = prompt("Enter a valid title");
+        title = title.trim();
       }
       if (title === null) {
         return;
@@ -182,6 +177,7 @@ function showBookMenu(option) {
       let author = prompt("Enter book author");
       while (author === "") {
         author = prompt("Enter a valid author");
+        author = author.trim();
       }
       if (author === null) {
         return;
@@ -192,6 +188,7 @@ function showBookMenu(option) {
       let title = prompt("Enter book title");
       while (title === "") {
         title = prompt("Enter a valid title");
+        title = title.trim();
       }
       if (title === null) {
         return;
@@ -203,6 +200,7 @@ function showBookMenu(option) {
       let title = prompt("Enter book title");
       while (title === "") {
         title = prompt("Enter a valid title");
+        title = title.trim();
       }
       if (title === null) {
         return;
@@ -222,6 +220,7 @@ function showBookMenu(option) {
       option = prompt(
         "Welcome to the Library Management System!\n\nEnter a valid option\n\n1. Add a book\n2. Remove a book\n3. List all books\n4. Mark a book as read\n5. Exit"
       );
+      option = option.trim();
       if (option === null) {
         return;
       }
