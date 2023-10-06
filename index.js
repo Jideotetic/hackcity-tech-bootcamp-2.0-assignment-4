@@ -8,6 +8,7 @@ function getResult(score) {
   score = prompt("Enter your score");
   while (score === "" || isNaN(+score)) {
     score = prompt("Enter a valid score");
+    score = score.trim();
   }
 
   if (score === null) {
