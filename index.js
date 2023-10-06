@@ -114,11 +114,18 @@ function removeBook(title) {
   let titleFirstLetter = title.splice(0, 1).join("").toUpperCase();
   title = title.join("");
   title = titleFirstLetter.concat(title);
-  for (let index = 0; index < library.length; index++) {
-    library[index].title === title
-      ? library.splice(index, 1)
-      : alert("No such book");
+  const titleIndex = library.findIndex(book => book.title === title);
+  if(titleIndex !== -1) {
+    library.splice(titleIndex, 1)
+    alert("Book removed successfully");
+  } else {
+    alert("No such book");
   }
+  //for (let index = 0; index < library.length; index++) {
+   // library[index].title === title
+   //   ? library.splice(index, 1)
+    //  : alert("No such book");
+//  }
 }
 
 function listBooks() {
@@ -181,7 +188,6 @@ function showBookMenu(option) {
       if (title === null) {
         return;
       }
-      alert("Book removed successfully");
       removeBook(title);
     } else if (option === "3") {
       listBooks();
