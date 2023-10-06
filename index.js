@@ -137,11 +137,17 @@ function markAsRead(title) {
   let titleFirstLetter = title.splice(0, 1).join("").toUpperCase();
   title = title.join("");
   title = titleFirstLetter.concat(title);
-  for (let index = 0; index < library.length; index++) {
-    library[index].title === title
-      ? (library[index].isRead = true)
-      : alert("No such book");
+  const titleIndex = library.findIndex(book => book.title === title);
+  if(titleIndex !== -1) {
+    library[titleIndex].isRead = true;
+  } else {
+    alert("No such book");
   }
+  // for (let index = 0; index < library.length; index++) {
+  //   library[index].title === title
+  //     ? (library[index].isRead = true)
+  //     : alert("No such book");
+  // }
 }
 
 function showBookMenu(option) {
