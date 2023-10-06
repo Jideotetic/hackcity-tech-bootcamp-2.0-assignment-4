@@ -140,6 +140,7 @@ function markAsRead(title) {
   const titleIndex = library.findIndex(book => book.title === title);
   if(titleIndex !== -1) {
     library[titleIndex].isRead = true;
+    alert("Marked successfully");
   } else {
     alert("No such book");
   }
